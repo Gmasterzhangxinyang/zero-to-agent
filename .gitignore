@@ -11,3 +11,5 @@ build/
 *.gguf
 *.bin
 *.safetensors
+output_local/
+output/

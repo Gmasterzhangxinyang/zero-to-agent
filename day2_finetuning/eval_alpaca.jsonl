@@ -1,0 +1,4 @@
+{"instruction": "什么是 Multi-Head Attention？", "input": "", "output": "Multi-Head Attention 并行运行多个 Attention，每个 head 学习不同的关注模式。公式：MultiHead(Q,K,V) = Concat(head_1,...,head_h) × W_O，每个 head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)。多头让模型同时关注不同位置和不同语义维度。"}
+{"instruction": "什么是 Learning Rate Warmup？", "input": "", "output": "Warmup 让学习率从 0 线性增长到目标值。训练初期模型不稳定，大学习率会震荡。Warmup 给模型适应期，通常占总步数的 5%-10%。Transformer 训练标配，公式：lr = lr_max × min(step / warmup_steps, 1)。"}
+{"instruction": "什么是 Top-p 采样？", "input": "", "output": "Top-p（nucleus sampling）动态选择候选 token。累积概率达到 p 时截断，只从这些 token 中采样。与 Top-k 的区别：Top-k 固定候选数量，Top-p 根据分布自适应。p=0.9 是常用值，平衡多样性和质量。比纯随机采样更可控。"}
+{"instruction": "解释残差连接（Residual Connection）", "input": "", "output": "残差连接将层的输入直接加到输出：output = F(x) + x。作用：缓解深层网络的梯度消失问题，让梯度可以直接流过跳跃连接。即使 F(x) 学到的是零，网络也能保持恒等映射，训练更稳定。ResNet 和 Transformer 都依赖残差连接。"}
